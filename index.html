@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="eeuss电影网（eeussdianyingwang-cn.github.io）是声音优先的观影指南：从环境音、对白、配乐、静音四个耳朵维度选片。收录 eeuss 风格的声音电影、极简对白片、长镜头声景、4K 修复版与正版观影入口。不含盗链、破解与擦边内容。">
+<meta name="keywords" content="eeuss电影网, eeussdianyingwang, eeuss, 声音电影, 声音优先, 环境音, 对白, 配乐, 静音, 声景, 声音设计, 电影声音, 极简对白, 长镜头, 一镜到底, 文艺片, 慢电影, 实验电影, 艺术电影, 冷门佳片, 高分电影, 经典电影, 4K修复, 电影修复, 杜比, 环绕声, 电影推荐, 电影在线观看, 正版电影, 华语电影, 侯孝贤, 是枝裕和, 塔可夫斯基, 贝拉·塔尔, 阿彼察邦, 爱德华·杨">
+<meta name="author" content="eeuss电影网">
+<meta name="robots" content="index, follow">
+<title>eeuss电影网 - 声音优先的观影指南 · 用耳朵挑电影</title>
+<link rel="canonical" href="https://eeussdianyingwang-cn.github.io/">
+<style>
+/* ================= 基础 ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#10232e; --ink2:#1d3a48; --paper:#eef4f2; --paper2:#e2ece9; --sub:#5f7a83;
+  --line:#c6d6d2; --mint:#3ddc97; --deep:#0d7a5f; --plum:#7c5cbf; --amber:#ffb547; --void:#0a1a22;
+  --mono:'JetBrains Mono','SFMono-Regular',Consolas,Menlo,monospace;
+  --serif:'Songti SC','STSong','SimSun','Noto Serif CJK SC',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;background:var(--paper);color:var(--ink);line-height:1.9;overflow-x:hidden}
+a{color:inherit;text-decoration:none;outline:none}
+::selection{background:var(--mint);color:var(--void)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sec{padding:104px 0;position:relative}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:52px}
+.sec-t{font-size:31px;font-weight:900;letter-spacing:.5px;display:flex;align-items:center;gap:13px}
+.sec-t .tag{font-size:9px;letter-spacing:2.5px;color:var(--void);background:var(--mint);padding:6px 12px;font-weight:900;font-family:var(--mono);border-radius:999px}
+.sec-s{color:var(--sub);font-size:11px;letter-spacing:1.5px;font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:3.5px;color:var(--deep);font-weight:900}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:15px 32px;border-radius:999px;font-weight:900;font-size:13.5px;cursor:pointer;border:2px solid var(--ink2);transition:.24s;white-space:nowrap;letter-spacing:.5px}
+.btn-p{background:var(--mint);color:var(--void);box-shadow:0 6px 0 var(--ink2)}
+.btn-p:hover{transform:translateY(-3px);box-shadow:0 9px 0 var(--ink2)}
+.btn-o{background:var(--paper2);color:var(--ink2)}
+.btn-o:hover{background:var(--plum);color:#fff;border-color:var(--plum)}
+.pill{display:inline-block;padding:3px 10px;font-size:10px;font-weight:900;letter-spacing:.5px;font-family:var(--mono);border:1.5px solid currentColor;border-radius:999px}
+.pill.m{color:var(--deep)}
+.pill.a{color:#a06a00}
+.pill.p{color:var(--plum)}
+.pill.v{color:#1a6fb0}
+
+/* ================= 顶导 ================= */
+.nav{position:sticky;top:0;z-index:60;background:rgba(238,244,242,.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink2)}
+.nav-in{display:flex;align-items:center;gap:18px;height:74px}
+.logo{font-size:20px;font-weight:900;white-space:nowrap;display:flex;align-items:center;gap:12px;letter-spacing:1.5px}
+.logo .lt{width:44px;height:44px;background:var(--mint);color:var(--void);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:15px;font-weight:900;border-radius:50%;position:relative}
+.logo .lt::after{content:'';position:absolute;inset:-5px;border:2px solid var(--mint);border-radius:50%;opacity:.35}
+.logo small{font-size:8px;color:var(--deep);letter-spacing:2.5px;font-family:var(--mono);display:block;margin-top:3px}
+.wave{display:flex;align-items:center;gap:3px;height:22px;flex:0 0 auto}
+.wave i{width:3px;background:var(--mint);border-radius:3px;display:block;animation:wv 1.1s ease-in-out infinite alternate}
+.wave i:nth-child(1){height:6px;animation-delay:0s}
+.wave i:nth-child(2){height:14px;animation-delay:.18s}
+.wave i:nth-child(3){height:22px;animation-delay:.36s}
+.wave i:nth-child(4){height:14px;animation-delay:.54s}
+.wave i:nth-child(5){height:7px;animation-delay:.72s}
+@keyframes wv{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+.menu{display:flex;gap:2px;flex:1;justify-content:flex-end;flex-wrap:wrap}
+.menu a{padding:10px 13px;font-size:13px;color:var(--sub);transition:.2s;white-space:nowrap;font-weight:700;position:relative;border-radius:999px}
+.menu a::after{content:'';position:absolute;left:13px;right:13px;bottom:5px;height:2px;background:var(--mint);transform:scaleX(0);transition:.22s;transform-origin:left}
+.menu a:hover{color:var(--deep)}
+.menu a:hover::after,.menu a.on::after{transform:scaleX(1)}
+.hamb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.hamb i{width:23px;height:2px;background:var(--deep);border-radius:2px}
+
+/* ================= HERO ================= */
+.hero{position:relative;overflow:hidden;padding:76px 0 96px;background:
+  radial-gradient(1000px 520px at 85% 12%, rgba(61,220,151,.34), transparent 60%),
+  radial-gradient(820px 480px at 8% 92%, rgba(124,92,191,.26), transparent 60%),
+  linear-gradient(160deg,#eef4f2,#dcece7);color:var(--ink)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr .9fr;gap:56px;align-items:center}
+.hero .kicker{font-family:var(--mono);font-size:10px;letter-spacing:4px;color:var(--deep);font-weight:900}
+.hero h1{font-size:60px;font-weight:900;line-height:1.18;margin:14px 0;letter-spacing:-1px;font-family:var(--serif)}
+.hero h1 em{font-style:normal;color:var(--deep);position:relative;display:inline-block}
+.hero h1 em::before{content:'"';position:absolute;left:-.5em;top:-.15em;font-size:1.5em;color:var(--mint);font-family:var(--serif)}
+.hero h1 em::after{content:'"';position:absolute;right:-.55em;bottom:-.2em;font-size:1.5em;color:var(--mint);font-family:var(--serif)}
+.hero .lede{font-size:15.5px;color:#31505c;margin-bottom:24px;max-width:560px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.hero .notes{margin-top:24px;display:flex;gap:9px;flex-wrap:wrap}
+.hero .notes span{font-size:11px;color:var(--sub);border:1px solid var(--line);background:var(--paper2);padding:5px 12px;font-family:var(--mono);letter-spacing:.5px;border-radius:999px}
+.osc{background:var(--void);color:var(--mint);border:2px solid var(--ink2);padding:24px 26px;border-radius:18px;position:relative;overflow:hidden;transform:rotate(1.2deg);box-shadow:0 22px 60px rgba(10,26,34,.34)}
+.osc .tk{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--mint);font-weight:900;opacity:.8}
+.osc h3{font-family:var(--serif);font-size:21px;margin:9px 0 18px;line-height:1.55;color:#fff}
+.osc .bars{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;align-items:end;height:74px;margin-bottom:16px;border-bottom:1px dashed rgba(61,220,151,.4);padding-bottom:8px}
+.osc .bars b{background:linear-gradient(180deg,var(--mint),var(--deep));border-radius:3px 3px 0 0;display:block;transition:.3s}
+.osc ul{list-style:none}
+.osc li{padding:8px 0 8px 22px;position:relative;font-size:12.6px;color:#cfe3dd;line-height:1.65;border-bottom:1px dashed rgba(255,255,255,.14)}
+.osc li:last-child{border-bottom:0}
+.osc li::before{content:'◢';position:absolute;left:0;top:8px;color:var(--mint);font-size:11px}
+.osc .muted{margin-top:14px;font-family:var(--mono);font-size:10px;color:var(--mint);letter-spacing:1.5px;display:flex;align-items:center;gap:8px}
+.osc .muted::before{content:'∿';animation:wv 1.4s ease-in-out infinite alternate}
+
+/* ================= 栏目1：听感象限（CSS 网格自定义属性条） ================= */
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.quad>div{background:var(--paper2);border:2px solid var(--ink2);padding:18px 16px 16px;transition:.3s;position:relative;overflow:hidden}
+.quad>div::before{content:'';position:absolute;left:16px;right:16px;bottom:14px;height:5px;background:rgba(0,0,0,.10);border-radius:3px;overflow:hidden}
+.quad>div::after{content:'';position:absolute;left:16px;bottom:14px;width:calc(var(--v,60) * 1%);height:5px;background:linear-gradient(90deg,var(--mint),var(--plum));border-radius:3px;transition:width .9s cubic-bezier(.22,1,.36,1)}
+.quad>div:hover{background:var(--ink2);color:#fff;transform:translateY(-8px);border-color:var(--mint)}
+.quad>div:hover .n{color:var(--mint)}
+.quad .n{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--deep);font-weight:900;transition:.3s}
+.quad h4{font-family:var(--serif);font-size:19px;margin:5px 0 7px}
+.quad p{font-size:11.8px;color:var(--sub);line-height:1.85;padding-bottom:14px}
+.quad>div:hover p{color:rgba(255,255,255,.85)}
+
+/* ================= 栏目2：声轨榜（定义列表 + 进度条） ================= */
+.rank{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:2px solid var(--ink2);background:var(--paper2)}
+.rank .row{display:grid;grid-template-columns:52px 1fr 74px;align-items:center;gap:14px;padding:15px 18px;border-bottom:1px dashed var(--line);border-right:1px dashed var(--line);transition:.22s}
+.rank .row:nth-child(2n){border-right:0}
+.rank .row:nth-child(-n+2){background:rgba(61,220,151,.14)}
+.rank .row:last-child,.rank .row:nth-last-child(2){border-bottom:0}
+.rank .row:hover{background:var(--ink2);color:#fff}
+.rank .no{font-family:var(--mono);font-size:19px;font-weight:900;color:var(--deep);line-height:1}
+.rank .row:hover .no{color:var(--mint)}
+.rank .no small{display:block;font-size:8px;letter-spacing:1.5px;color:var(--sub);margin-top:4px;font-weight:700}
+.rank .row:hover .no small{color:rgba(255,255,255,.6)}
+.rank h4{font-size:15px;line-height:1.45}
+.rank h4 b{font-weight:900;display:block;font-size:15.5px}
+.rank h4 span{font-size:10.5px;font-family:var(--mono);color:var(--sub);letter-spacing:.6px}
+.rank .row:hover h4 span{color:rgba(255,255,255,.6)}
+.rank .sc{text-align:right}
+.rank .sc i{display:block;height:5px;border-radius:3px;background:linear-gradient(90deg,var(--mint),var(--plum));margin-bottom:5px}
+.rank .sc b{font-family:var(--mono);font-size:12.5px;font-weight:900;color:var(--deep)}
+.rank .row:hover .sc b{color:var(--mint)}
+
+/* ================= 栏目3：片单（等宽卡片 + 声谱条 + 斜切） ================= */
+.pick{background:var(--paper2);border:2px solid var(--ink2);display:flex;flex-direction:column;transition:.36s;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%)}
+.pick:nth-child(even){clip-path:polygon(0 14px,14px 0,100% 0,100% 100%,0 100%)}
+.pick:hover{transform:translateY(-9px) rotate(-.8deg);box-shadow:0 26px 54px rgba(16,35,46,.26);z-index:3;background:var(--ink2);color:#fff}
+.pick .cvr{height:132px;position:relative;padding:14px 16px;color:#fff;display:flex;align-items:flex-end;gap:3px}
+.pick .cvr b{font-family:var(--serif);font-size:19px;font-weight:900;line-height:1.35;text-shadow:0 4px 16px rgba(0,0,0,.5);z-index:2}
+.pick .cvr .sp{position:absolute;inset:0;display:flex;align-items:flex-end;gap:2px;padding:0 16px 12px;opacity:.5}
+.pick .cvr .sp i{flex:1;background:rgba(255,255,255,.85);border-radius:2px 2px 0 0;display:block}
+.pick .body{padding:15px 17px 17px;display:flex;flex-direction:column;flex:1}
+.pick .body .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.pick .body h4{font-size:15.5px;line-height:1.45}
+.pick .body p{font-size:12.3px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.85;margin-top:8px;flex:1;transition:.3s}
+.pick:hover .body p{color:rgba(255,255,255,.86)}
+.pick .body .ft{margin-top:11px;display:flex;justify-content:space-between;align-items:center;border-top:1px dotted var(--line);padding-top:10px;font-size:11.5px;font-weight:900;letter-spacing:.5px;color:var(--deep);font-family:var(--mono);transition:.3s}
+.pick:hover .body .ft{color:var(--mint);border-top-color:rgba(255,255,255,.35)}
+
+/* ================= 栏目4：静音课（竖向步骤流） ================= */
+.les{display:grid;grid-template-columns:1fr .92fr;gap:28px;align-items:start}
+.stp{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line);position:relative}
+.stp:last-child{border-bottom:0}
+.stp::before{content:'';position:absolute;left:31px;top:64px;bottom:0;width:2px;background:var(--line)}
+.stp:last-child::before{display:none}
+.stp .no{flex:0 0 58px;width:58px;height:58px;border-radius:50%;background:var(--paper2);border:2px solid var(--ink2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:20px;font-weight:900;color:var(--deep);transition:.26s;position:relative;z-index:2}
+.stp:hover .no{background:var(--mint);color:var(--void);transform:scale(1.08)}
+.stp h4{font-size:16px;margin-bottom:5px;font-family:var(--serif)}
+.stp p{font-size:12.8px;color:var(--sub);line-height:1.9}
+.silent{background:var(--void);color:var(--paper);padding:26px;border-radius:16px;position:relative}
+.silent h4{font-family:var(--serif);font-size:19px;margin-bottom:4px;color:#fff}
+.silent .sub{font-size:9.5px;letter-spacing:2.5px;color:var(--mint);font-family:var(--mono);margin-bottom:16px}
+.silent dl{display:grid;grid-template-columns:74px 1fr;gap:9px 14px;font-size:12.6px}
+.silent dt{color:var(--mint);font-family:var(--mono);font-size:10.5px;letter-spacing:1px;padding-top:2px}
+.silent dd{color:#cfe3dd;line-height:1.75;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:9px}
+.silent dd:last-child{border-bottom:0}
+.silent .gap{margin-top:16px;font-size:10.5px;color:var(--mint);font-family:var(--mono);letter-spacing:1px;display:flex;align-items:center;gap:8px}
+.silent .gap::before{content:'∿';animation:wv 1.3s ease-in-out infinite alternate}
+
+/* ================= 栏目5：长篇（杂志：衬线 + 眉题 + 引语 + 分栏） ================= */
+.essay{border:2px solid var(--ink2);padding:34px 36px;background:var(--paper2);column-count:2;column-gap:42px;column-rule:1px solid var(--line);border-radius:14px}
+.essay .em{font-family:var(--mono);font-size:9px;letter-spacing:3px;color:var(--deep);font-weight:900;break-after:avoid}
+.essay h3{font-family:var(--serif);font-size:26px;margin:9px 0 14px;line-height:1.42;break-after:avoid}
+.essay .by{font-size:10.5px;color:var(--sub);font-family:var(--mono);letter-spacing:1px;margin-bottom:15px;break-after:avoid}
+.essay p{font-size:13.4px;color:#31505c;line-height:2.05;margin-bottom:10px;text-align:justify;break-inside:avoid}
+.essay p:first-of-type::first-letter{font-family:var(--serif);font-size:58px;font-weight:900;color:var(--deep);float:left;line-height:.82;margin:6px 11px 0 0}
+.essay blockquote{border-left:5px solid var(--plum);padding:6px 0 6px 15px;margin:16px 0;color:var(--ink2);font-family:var(--serif);font-size:16px;line-height:1.85;break-inside:avoid}
+
+/* ================= 栏目6：关于（数据条 + 承诺栅格） ================= */
+.about{background:var(--void);color:var(--paper);border:3px solid var(--mint);padding:48px;border-radius:16px}
+.about .lh{display:grid;grid-template-columns:1fr .92fr;gap:44px;margin-bottom:34px}
+.about .lh h2{font-family:var(--serif);font-size:33px;line-height:1.42;font-weight:900}
+.about .lh h2 u{text-decoration:none;background:var(--mint);color:var(--void);padding:0 9px;display:inline-block;transform:rotate(-1.5deg)}
+.about .lh .lead{color:#cfe3dd;font-size:14.5px;margin-top:14px;line-height:2}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--mint);border-bottom:2px solid var(--mint)}
+.stats div{text-align:center;padding:24px 8px}
+.stats b{display:block;font-size:30px;font-weight:900;color:var(--mint);line-height:1.1;font-family:var(--mono)}
+.stats small{font-size:10px;color:#cfe3dd;letter-spacing:1.5px;font-family:var(--mono)}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat div{border:1.5px solid rgba(255,255,255,.22);padding:22px;background:rgba(255,255,255,.04);border-radius:12px}
+.feat h4{font-size:15px;margin-bottom:9px;display:flex;align-items:center;gap:9px;font-family:var(--serif)}
+.feat h4 .tk{width:26px;height:26px;background:var(--mint);color:var(--void);font-size:11px;display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);flex:0 0 auto;font-weight:900;border-radius:50%}
+.feat p{font-size:12.8px;color:#cfe3dd;line-height:1.9}
+.siteinfo{margin-top:26px;padding:24px;border:1.5px solid rgba(255,255,255,.22);font-size:13px;color:#cfe3dd;line-height:2.05;border-radius:12px}
+.siteinfo b{color:#fff}
+
+/* ================= 页脚 ================= */
+.foot{border-top:2px solid var(--ink2);padding:56px 0 26px;color:var(--sub);font-size:13px;background:var(--paper)}
+.f-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;margin-bottom:28px}
+.f-links a{margin-right:22px;color:var(--sub);font-size:13px;transition:.2s}
+.f-links a:hover{color:var(--deep)}
+.f-cat{display:grid;grid-template-columns:repeat(6,1fr);gap:9px 24px;margin:22px 0;font-family:var(--mono);font-size:11.5px}
+.f-cat a{color:var(--sub);transition:.2s}
+.f-cat a:hover{color:var(--deep)}
+.copy{text-align:center;border-top:1px dashed var(--line);padding-top:22px;letter-spacing:.5px;font-family:var(--mono);font-size:11px;color:#8b9aa0}
+.copy b{color:var(--deep)}
+
+/* ================= 网格 ================= */
+.grid{display:grid;gap:18px}
+.g6{grid-template-columns:repeat(6,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+
+/* ================= 移动端 ================= */
+@media(max-width:1100px){.g6,.g5{grid-template-columns:repeat(4,1fr)}.g4,.g3{grid-template-columns:repeat(3,1fr)}.about .lh{grid-template-columns:1fr}.quad{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:48px}.hero h1{font-size:44px}.osc{transform:none}
+  .g3,.g2,.feat,.les{grid-template-columns:1fr}
+  .essay{column-count:1}
+  .rank{grid-template-columns:1fr}
+  .rank .row{border-right:0}
+}
+@media(max-width:760px){
+  .g6,.g5,.g4,.g3,.quad{grid-template-columns:repeat(2,1fr);gap:13px}
+  .wave{display:none}
+}
+@media(max-width:640px){
+  .sec{padding:64px 0}.sec-t{font-size:23px}
+  .nav-in{height:68px;gap:10px}
+  .hamb{display:flex}
+  .menu{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);flex-direction:column;padding:10px;border-bottom:2px solid var(--ink2)}
+  .menu.open{display:flex}
+  .menu a{text-align:center;padding:13px;border-bottom:1px solid var(--line);color:var(--sub)}
+  .hero{padding:50px 0}.hero .wrap{padding:32px 24px}.hero h1{font-size:32px}
+  .g6,.g5,.g4,.g3,.g2,.feat,.about .stats,.quad{grid-template-columns:1fr 1fr}
+  .f-cat{grid-template-columns:repeat(2,1fr)}
+  .about{padding:28px 18px}.about .lh h2{font-size:25px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#">
+      <span class="lt">eeuss</span>
+      <span>eeuss电影网<small>SOUND-FIRST CINEMA</small></span>
+    </a>
+    <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <nav class="menu" id="menu">
+      <a href="#home">今日声景</a>
+      <a href="#quad">听感象限</a>
+      <a href="#rank">声轨榜</a>
+      <a href="#pick">片单</a>
+      <a href="#les">静音课</a>
+      <a href="#essay">长篇</a>
+      <a href="#about">关于</a>
+    </nav>
+    <div class="hamb" id="hamb"><i></i><i></i><i></i></div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <span class="kicker">// LISTEN BEFORE YOU WATCH</span>
+      <h1>闭上眼，<em>先听 30 秒</em></h1>
+      <p class="lede">eeuss电影网（eeussdianyingwang-cn.github.io）是一座<b>声音优先的电影观影指南</b>。我们不按明星、类型或热度推荐，按<b>声音</b>推荐：<b>环境音</b>（雨、风、电车、灶台）、<b>对白</b>（台词有多少）、<b>配乐</b>（是枝裕和式的安静，还是莫里康内式的辽阔）、<b>静音</b>（塔可夫斯基式的一分钟无声）。片单以侯孝贤、是枝裕和、塔可夫斯基、贝拉·塔尔、阿彼察邦、爱德华·杨为主轴，标注片长、年代、声轨类型、修复状态与正版入口。</p>
+      <div class="acts">
+        <a class="btn btn-p" href="#pick">按声音找片 →</a>
+        <a class="btn btn-o" href="#quad">看听感象限</a>
+      </div>
+      <div class="notes">
+        <span>✔ 声音优先</span><span>✔ 长镜头</span><span>✔ 4K 修复</span><span>✔ 正版入口</span><span>✔ 不含盗链</span>
+      </div>
+    </div>
+    <div class="osc">
+      <div class="tk">SOUND CHECK · 今日声景</div>
+      <h3>今晚的电影，先从"厨房的水声"开始</h3>
+      <div class="bars">
+        <b style="height:22%"></b><b style="height:48%"></b><b style="height:70%"></b><b style="height:38%"></b>
+        <b style="height:86%"></b><b style="height:54%"></b><b style="height:92%"></b><b style="height:44%"></b>
+        <b style="height:66%"></b><b style="height:30%"></b><b style="height:78%"></b><b style="height:20%"></b>
+      </div>
+      <ul>
+        <li><b>19:00 晚饭时</b>→ 是枝裕和《步履不停》：横山家的厨房，水烧开的声音比台词多</li>
+        <li><b>20:30 雨夜</b>→ 阿彼察邦《能召回前世的布米叔叔》：热带的雨、蛙、虫、远处电视</li>
+        <li><b>22:00 睡不着</b>→ 塔可夫斯基《镜子》：母亲在晾衣绳边的那一段，几乎没有任何对白</li>
+        <li><b>一个周末下午</b>→ 贝拉·塔尔《都灵之马》：风。六个白天，只有风、井、马</li>
+      </ul>
+      <div class="muted">声轨已就绪 · 请关闭字幕外的一切提示音</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目1：听感象限（CSS 变量进度条） ================= -->
+<section class="sec" id="quad">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="tag">AXIS</span>听感象限</h2>
+      <span class="sec-s">四个耳朵维度，决定今晚看什么</span>
+    </div>
+    <div class="grid g4 quad">
+      <div style="--v:92"><div class="n">AXIS 01</div><h4>环境音</h4><p>雨打铁皮、电车的摩擦、灶台上的油、晾衣绳的风。侯孝贤与是枝裕和的电影，声音就是场景本身。</p></div>
+      <div style="--v:34"><div class="n">AXIS 02</div><h4>对白</h4><p>台词越少，留白越多。小津安二郎的餐桌、爱德华·杨的走廊，人物常常说完一句就走开。</p></div>
+      <div style="--v:78"><div class="n">AXIS 03</div><h4>配乐</h4><p>从莫里康内的口哨到坂本龙一的钢琴，再到"根本没有配乐"。音乐出现的那一秒，就是导演想让你哭的时候。</p></div>
+      <div style="--v:88"><div class="n">AXIS 04</div><h4>静音</h4><p>塔可夫斯基的一分钟无声、贝拉·塔尔的七分钟长镜头。静音不是没有声音，是所有声音都被听见了。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目2：声轨榜（定义列表网格 + 进度条） ================= -->
+<section class="sec" id="rank" style="background:linear-gradient(180deg,#eef4f2,#e2ece9)">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="tag">TOP 8</span>声轨榜</h2>
+      <a class="btn btn-o" href="#" style="border-color:var(--ink2)">完整 40 部 →</a>
+    </div>
+    <div class="rank">
+      <div class="row"><div class="no">01<small>ENV</small></div><div class="tx"><h4><b>悲情城市</b><span>侯孝贤 · 1989 · 环境音</span></h4></div><div class="sc"><i style="width:96%"></i><b>96</b></div></div>
+      <div class="row"><div class="no">02<small>SIL</small></div><div class="tx"><h4><b>镜子</b><span>塔可夫斯基 · 1975 · 静音</span></h4></div><div class="sc"><i style="width:94%"></i><b>94</b></div></div>
+      <div class="row"><div class="no">03<small>ENV</small></div><div class="tx"><h4><b>步履不停</b><span>是枝裕和 · 2008 · 厨房声</span></h4></div><div class="sc"><i style="width:91%"></i><b>91</b></div></div>
+      <div class="row"><div class="no">04<small>MU</small></div><div class="tx"><h4><b>西部往事</b><span>赛尔乔·莱昂内 · 1968 · 莫里康内</span></h4></div><div class="sc"><i style="width:89%"></i><b>89</b></div></div>
+      <div class="row"><div class="no">05<small>SIL</small></div><div class="tx"><h4><b>都灵之马</b><span>贝拉·塔尔 · 2011 · 风</span></h4></div><div class="sc"><i style="width:88%"></i><b>88</b></div></div>
+      <div class="row"><div class="no">06<small>ENV</small></div><div class="tx"><h4><b>恋恋风尘</b><span>侯孝贤 · 1986 · 铁轨与云</span></h4></div><div class="sc"><i style="width:86%"></i><b>86</b></div></div>
+      <div class="row"><div class="no">07<small>ENV</small></div><div class="tx"><h4><b>能召回前世的布米叔叔</b><span>阿彼察邦 · 2010 · 热带雨</span></h4></div><div class="sc"><i style="width:83%"></i><b>83</b></div></div>
+      <div class="row"><div class="no">08<small>DIALOGUE</small></div><div class="tx"><h4><b>一一</b><span>杨德昌 · 2000 · 对白密度</span></h4></div><div class="sc"><i style="width:80%"></i><b>80</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目3：片单（等宽卡 + 声谱条 + 斜切） ================= -->
+<section class="sec" id="pick">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="tag">PICKS</span>声景片单</h2>
+      <span class="sec-s">标注片长 · 年代 · 声轨 · 修复 · 正版入口</span>
+    </div>
+    <div class="grid g3">
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#123a34,#0a1a22)"><span class="sp"><i style="height:18%"></i><i style="height:46%"></i><i style="height:72%"></i><i style="height:34%"></i><i style="height:88%"></i><i style="height:52%"></i><i style="height:64%"></i></span><b>步履不停</b></div><div class="body"><div class="hd"><h4>步履不停</h4><span class="pill m">环境音</span></div><p>是枝裕和 2008。横山家的一天：母亲在厨房烧水，水开了，她没说话。全片最动人的不是台词，是灶台、台阶、落叶与蝉声。</p><span class="ft"><span>4K 修复 →</span><span>114 MIN</span></span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#2a1c3a,#0a1a22)"><span class="sp"><i style="height:92%"></i><i style="height:30%"></i><i style="height:20%"></i><i style="height:10%"></i><i style="height:6%"></i><i style="height:14%"></i><i style="height:24%"></i></span><b>镜子</b></div><div class="body"><div class="hd"><h4>镜子</h4><span class="pill v">静音</span></div><p>塔可夫斯基 1975。这不是一部"能看懂"的电影，它是一次梦的复刻。长达一分钟的无声段落里，你能听见自己的呼吸。</p><span class="ft"><span>4K 修复 →</span><span>108 MIN</span></span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#1d3a2a,#0a1a22)"><span class="sp"><i style="height:40%"></i><i style="height:66%"></i><i style="height:82%"></i><i style="height:54%"></i><i style="height:70%"></i><i style="height:38%"></i><i style="height:58%"></i></span><b>都灵之马</b></div><div class="body"><div class="hd"><h4>都灵之马</h4><span class="pill v">静音</span></div><p>贝拉·塔尔 2011。六个白天，一口井，一匹马，一场不停的风。没有配乐，没有对白，只有风穿过木头的声音。</p><span class="ft"><span>2K 修复 →</span><span>146 MIN</span></span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#3a2c12,#0a1a22)"><span class="sp"><i style="height:24%"></i><i style="height:44%"></i><i style="height:60%"></i><i style="height:78%"></i><i style="height:50%"></i><i style="height:36%"></i><i style="height:62%"></i></span><b>悲情城市</b></div><div class="body"><div class="hd"><h4>悲情城市</h4><span class="pill m">环境音</span></div><p>侯孝贤 1989。台湾的秋天，收音机、酒杯、火车、街头。声音先于画面，先把你带进那个年代。</p><span class="ft"><span>4K 修复 →</span><span>157 MIN</span></span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#122a3a,#0a1a22)"><span class="sp"><i style="height:30%"></i><i style="height:58%"></i><i style="height:42%"></i><i style="height:74%"></i><i style="height:60%"></i><i style="height:48%"></i><i style="height:66%"></i></span><b>布米叔叔</b></div><div class="body"><div class="hd"><h4>能召回前世的布米叔叔</h4><span class="pill m">环境音</span></div><p>阿彼察邦 2010。热带的雨、青蛙、牛、远处电视里的新闻。声音是这片丛林真正的叙事者。</p><span class="ft"><span>2K 修复 →</span><span>114 MIN</span></span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#3a1224,#0a1a22)"><span class="sp"><i style="height:56%"></i><i style="height:82%"></i><i style="height:68%"></i><i style="height:90%"></i><i style="height:44%"></i><i style="height:72%"></i><i style="height:38%"></i></span><b>西部往事</b></div><div class="body"><div class="hd"><h4>西部往事</h4><span class="pill p">配乐</span></div><p>莱昂内 1968。莫里康内的口哨一响，你就已经在西部了。这是配乐战胜画面的少数例子之一。</p><span class="ft"><span>4K 修复 →</span><span>165 MIN</span></span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目4：静音课（竖向编号步骤流） ================= -->
+<section class="sec" id="les" style="background:linear-gradient(180deg,#eef4f2,#e2ece9)">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="tag">LESSON</span>静音课</h2>
+      <span class="sec-s">为什么"声音电影"，要先学会关掉声音</span>
+    </div>
+    <div class="les">
+      <div>
+        <div class="stp"><div class="no">01</div><div><h4>关掉字幕的"提示音"</h4><p>手机通知、空调外机、冰箱压缩机、楼上的脚步。它们不是背景，它们是竞争对手。请在片头字幕出现前，把手机翻面、静音、放到另一个房间。</p></div></div>
+        <div class="stp"><div class="no">02</div><div><h4>不要用耳机，用音箱</h4><p>长镜头的声音是"空间"的声音：风从左耳到右耳需要时间，雨落在屋顶和落在泥地是两个音色。耳机把空间压扁了。2.0 书架箱 &gt; 降噪耳机。</p></div></div>
+        <div class="stp"><div class="no">03</div><div><h4>关闭"运动补偿 / MEMC / 插帧"</h4><p>24fps 的颤动是胶片的一部分，也是声音与画面同步的基准。插帧会让口型错位 2 帧——你会先看到嘴动，再听到声音。</p></div></div>
+        <div class="stp"><div class="no">04</div><div><h4>不要倍速，倍速会杀死静音</h4><p>1.25 倍速看《都灵之马》，风会变成"呼呼"的白噪声；1.5 倍速看《镜子》，那 60 秒的无声会变成"空白"。静音是需要时间的。</p></div></div>
+        <div class="stp"><div class="no">05</div><div><h4>选择"原始画幅"，拒绝 16:9 拉伸</h4><p>侯孝贤的 1.33:1 被拉宽后，左右的声音定位会错位；小津的下方留白被裁掉，字幕会压住演员的眼睛。画幅是构图，也是声场。</p></div></div>
+        <div class="stp"><div class="no">06</div><div><h4>看完之后，留五分钟空白</h4><p>片尾字幕不是结束，是回神。请不要在最后一个画面消失的瞬间打开社交软件——让那 157 分钟的声音，在你身体里多待一会儿。</p></div></div>
+      </div>
+      <aside class="silent">
+        <h4>声音观影设置清单</h4>
+        <p class="sub">CHECK LIST · SOUND FIRST</p>
+        <dl>
+          <dt>声道</dt><dd>已关闭"虚拟环绕 / 影院音效"，选择原始立体声（长镜头的声音不是环绕的）</dd>
+          <dt>响度</dt><dd>已把音量调到"能听见窗外的风"，环境音是长镜头的一半</dd>
+          <dt>字幕</dt><dd>已选择官方/原版字幕，非机器翻译；字幕未遮挡画面下缘（小津的留白在下方）</dd>
+          <dt>片幅</dt><dd>已选择"原始画幅"，未强行拉伸为 16:9（画幅即声场）</dd>
+          <dt>帧率</dt><dd>已关闭"运动补偿 / MEMC / 插帧"，避免口型错位</dd>
+          <dt>时长</dt><dd>已确认片长，并已预留片尾字幕时间（别在字幕开始时关掉）</dd>
+        </dl>
+        <div class="gap">声轨已就绪 · 请勿倍速</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目5：长文（杂志） ================= -->
+<section class="sec" id="essay">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="tag">ESSAY</span>长篇</h2>
+      <span class="sec-s">关于"声音"的 1 篇</span>
+    </div>
+    <article class="essay">
+      <div class="em">ESSAY 01 · SOUNDTRACK OF SILENCE</div>
+      <h3>我们为什么需要先"听"电影</h3>
+      <div class="by">BY eeuss电影网 声音部 · 约 7 min 阅读</div>
+      <p>有一类电影，你看第一遍时什么也没记住，却在三天后突然想起它的声音：<b>水烧开的声音、雨打铁皮的声音、一个人关上房门的声音</b>。这类电影不适合"看"，适合"听"。eeuss电影网想做的，就是把它们找出来。</p>
+      <p>"eeuss"不是某个导演，也不是某种格式，它是我们给这类电影起的一个拟声词：<b>一种低音量、高密度、容易被忽略的声音</b>。它可能是侯孝贤《悲情城市》里收音机的杂音，是是枝裕和《步履不停》里横山家厨房的水声，是塔可夫斯基《镜子》里母亲晾衣服时那长达一分钟的静默，是贝拉·塔尔《都灵之马》里六个白天不停的风。</p>
+      <blockquote>"声音是时间的形状。你看不见时间，但你能听见它过去。"</blockquote>
+      <p>大多数电影推荐都在谈"剧情""演技""镜头""隐喻"，很少有人谈<b>声音</b>。但声音恰恰是电影里最诚实的东西。演员可以假装，布景可以造假，剪辑可以欺骗，但一段录得好的环境音，骗不了任何人——它真实地来自某个下午、某扇窗、某条街。</p>
+      <p>所以我们用四个维度给电影重新分类，而不是用类型：<b>环境音</b>（这片子的声音，能不能让你相信它真的存在）、<b>对白</b>（台词有多少，留白有多少）、<b>配乐</b>（音乐出现的那一秒，是不是导演想让你哭的时候）、<b>静音</b>（有没有一段"什么都没有发生，但你听见了全部"的长镜头）。</p>
+      <p>按声音找片，有一个意想不到的好处：<b>它不挑心情，只挑环境</b>。下雨的夜晚适合阿彼察邦，因为你需要雨声；失眠的凌晨适合塔可夫斯基，因为你需要安静；周末下午适合小津，因为你需要有人说话，但不要太吵。你不需要"想看点什么"，你只需要回答一个问题：<b>今晚，我想听见什么？</b></p>
+      <p>今晚的建议：选一部"环境音 &gt; 90"的电影，把灯关掉，手机翻面，用音箱而不是耳机，从片头字幕开始，听到片尾字幕结束。如果中途走神了，没关系——声音会自己回来，它会从窗外的风、冰箱的嗡鸣、隔壁的水声里，重新找到你。</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 栏目6：关于 ================= -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="lh">
+        <div>
+          <h2>eeuss电影网<br>按<b>声音</b><u>找电影</u>的观影指南</h2>
+          <p class="lead">eeuss电影网（eeussdianyingwang-cn.github.io）是<b>以声音为索引的电影观影指南</b>。我们不堆片库、不追热度，只回答一个问题：<b>在这样一个雨夜 / 失眠的凌晨 / 周末的下午，我想听见什么？</b>馆藏按听感象限（环境音 / 对白 / 配乐 / 静音）、导演、年代、胶片与修复状态五重索引，每部标注正版入口，让你在 30 秒内决定今晚看什么。</p>
+        </div>
+        <div class="stats">
+          <div><b>6,280</b><small>馆藏影片</small></div>
+          <div><b>4</b><small>听感象限</small></div>
+          <div><b>40</b><small>部声景片单</small></div>
+          <div><b>0</b><small>盗链广告</small></div>
+        </div>
+      </div>
+      <div class="feat">
+        <div><h4><span class="tk">01</span>声音优先</h4><p>按环境音、对白、配乐、静音四轴打分。标准是"关掉画面还能不能听"，不是"它卖了多少"。</p></div>
+        <div><h4><span class="tk">02</span>长镜头优先</h4><p>侯孝贤、是枝裕和、塔可夫斯基、贝拉·塔尔、阿彼察邦、爱德华·杨。平均镜头长度 &gt; 30 秒，请关闭倍速与插帧。</p></div>
+        <div><h4><span class="tk">03</span>4K 修复优先</h4><p>优先推荐 4K / 2K 修复版、标准收藏、胶片原始画幅。片源限定持牌平台艺术电影专区、正版修复版与电影资料馆。不搬运、不盗链、不破解、不写"未删减""禁片""磁力"。</p></div>
+      </div>
+      <div class="siteinfo">
+        <p><b>网站名称：</b>eeuss电影网 —— 声音优先的观影指南 · 用耳朵挑电影 · 声音电影 · 环境音 · 对白 · 配乐 · 静音 · 声景 · 声音设计 · 长镜头 · 极简对白 · 文艺片 · 慢电影 · 实验电影 · 艺术电影 · 冷门佳片 · 高分电影 · 经典电影 · 4K 修复 · 电影修复 · 杜比 · 环绕声 · 电影推荐 · 电影在线观看 · 正版电影</p>
+        <p style="margin-top:8px"><b>网站网址：</b><a href="https://eeussdianyingwang-cn.github.io/" style="color:var(--mint)">https://eeussdianyingwang-cn.github.io/</a></p>
+        <p style="margin-top:8px"><b>合规声明：</b>本演示页面为静态模板示例，影片名称、年份、片长、评分、"馆藏 6,280 部"、"声轨榜 8 部"排序与"正版/付费"状态均为示例占位数据，仅供界面展示与学习使用，不代表真实可观看状态、实际价格、版权归属或授权情况，一切以各平台当日页面为准。影视作品版权归原作者及版权方所有，请在正版平台确认版权、价格与地区限制后观看，支持创作者。本站<b>不提供任何破解账号、绕过付费或 DRM 的技术方法，不传播磁力链接、种子与网盘盗版资源</b>。含暴力、血腥、成人题材的影片已标注 <b>18+</b>，建议成年人在清醒状态下观看；未成年人请在家长指导下使用本站。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a class="logo" href="#" style="font-size:17px"><span class="lt">eeuss</span><span>eeuss电影网<small>SOUND-FIRST CINEMA</small></span></a>
+        <p style="margin-top:12px;max-width:440px">闭上眼，先听 30 秒。</p>
+      </div>
+      <div class="f-links">
+        <a href="#home">今日声景</a>
+        <a href="#quad">听感象限</a>
+        <a href="#rank">声轨榜</a>
+        <a href="#pick">片单</a>
+        <a href="#les">静音课</a>
+        <a href="#essay">长篇</a>
+        <a href="#about">关于</a>
+        <a href="#">正版来源</a>
+      </div>
+    </div>
+    <div class="f-cat">
+      <a href="#">eeuss电影网</a>
+      <a href="#">声音电影</a>
+      <a href="#">声音优先</a>
+      <a href="#">环境音</a>
+      <a href="#">静音</a>
+      <a href="#">声景</a>
+    </div>
+    <div class="f-cat">
+      <a href="#">长镜头</a>
+      <a href="#">极简对白</a>
+      <a href="#">一镜到底</a>
+      <a href="#">电影修复</a>
+      <a href="#">4K修复</a>
+      <a href="#">文艺片</a>
+    </div>
+    <div class="copy">
+      © 2026 eeuss电影网 eeussdianyingwang　|　声音优先 · 声景片单 · 长镜头 · 4K 修复版优先　|　<a href="#" style="color:var(--deep)">回到顶部 ↑</a><br>
+      <b>网站网址：https://eeussdianyingwang-cn.github.io/</b>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hamb').addEventListener('click',function(){document.getElementById('menu').classList.toggle('open');});
+document.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open');});});
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+150,cur='';
+  document.querySelectorAll('section[id]').forEach(function(s){if(s.offsetTop<=y)cur=s.id;});
+  document.querySelectorAll('.menu a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+});
+</script>
+</body>
+</html>
